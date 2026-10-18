@@ -207,3 +207,119 @@ button.secondary {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* The 32-piece sliding puzzle */
+#puzzleBoard {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+  gap: 4px;
+  width: min(100%, 360px);
+  aspect-ratio: 4 / 8;
+  margin: 20px auto;
+  padding: 8px;
+  background: #ead8c4;
+  border: 1px solid #c9aa91;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(85, 55, 40, 0.12);
+  overflow: hidden;
+}
+
+.puzzle-tile {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 4px;
+  background-color: #f5e8d8;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease;
+  touch-action: manipulation;
+}
+
+.puzzle-tile:not(.empty):hover {
+  filter: brightness(1.08);
+  transform: scale(0.97);
+}
+
+.puzzle-tile:focus-visible {
+  outline: 3px solid #a65d70;
+  outline-offset: 2px;
+}
+
+.puzzle-tile.empty {
+  background-image: none !important;
+  background-color: #e2cdb7;
+  border: 1px dashed #c3a58d;
+  cursor: default;
+}
+
+@media (max-width: 480px) {
+  #puzzleBoard {
+    width: min(100%, 320px);
+    gap: 3px;
+    padding: 5px;
+  }
+}
+
+/* The 32-piece sliding puzzle */
+#puzzleBoard {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+  gap: 4px;
+  width: min(100%, 360px);
+  aspect-ratio: 4 / 8;
+  margin: 20px auto;
+  padding: 8px;
+  background: #ead8c4;
+  border: 1px solid #c9aa91;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(85, 55, 40, 0.12);
+  overflow: hidden;
+}
+
+.puzzle-tile {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 4px;
+  background-color: #f5e8d8;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease;
+  touch-action: manipulation;
+}
+
+.puzzle-tile:not(.empty):hover {
+  filter: brightness(1.08);
+  transform: scale(0.97);
+}
+
+.puzzle-tile:focus-visible {
+  outline: 3px solid #a65d70;
+  outline-offset: 2px;
+}
+
+.puzzle-tile.empty {
+  background-image: none !important;
+  background-color: #e2cdb7;
+  border: 1px dashed #c3a58d;
+  cursor: default;
+}
+
+@media (max-width: 480px) {
+  #puzzleBoard {
+    width: min(100%, 320px);
+    gap: 3px;
+    padding: 5px;
+  }
+}
