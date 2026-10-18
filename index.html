@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Piece of Us ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="scrapbook">
+
+    <!-- PAGE 1: WELCOME -->
+    <section id="welcome" class="page active">
+      <p class="eyebrow">A LITTLE KEEPSAKE · MADE WITH LOVE</p>
+
+      <div class="photo-frame">
+        <img src="assets/kunji-photo.jpg" alt="Our favourite memory">
+      </div>
+
+      <p class="handwriting">for my favourite person ♡</p>
+      <h1>Our Little<br><em>Piece of Forever</em></h1>
+      <p class="intro">
+        A little memory, a little puzzle,<br>
+        and a whole lot of love.
+      </p>
+
+      <button id="startButton">Open your scrapbook ↗</button>
+      <p class="tiny-note">collected moments & tiny treasures</p>
+    </section>
+
+    <!-- PAGE 2: PUZZLE -->
+    <section id="puzzlePage" class="page" hidden>
+      <p class="eyebrow">PAGE TWO · A LITTLE CHALLENGE</p>
+      <h2>Put our picture back together</h2>
+      <p class="intro">32 little pieces. One favourite memory.</p>
+
+      <div id="puzzleBoard" aria-label="Picture sliding puzzle"></div>
+
+      <p id="moveCounter">Moves: 0</p>
+      <p id="puzzleMessage">Every little piece has its place.</p>
+
+      <button id="shuffleButton">Shuffle again ↻</button>
+      <button id="backButton" class="secondary">← Back to cover</button>
+    </section>
+
+    <!-- PAGE 3: CONGRATULATIONS -->
+    <section id="congratsPage" class="page" hidden>
+      <p class="eyebrow">PAGE THREE · YOU DID IT</p>
+      <h2>You solved our little puzzle! ♡</h2>
+
+      <div class="photo-frame final-frame">
+        <img src="assets/kunji-photo.jpg" alt="Our completed picture">
+      </div>
+
+      <p class="handwriting final-message">
+        yeeeeeeeeeeeeeee<br>
+        You solved the puzzle,<br>
+        ente sothhpody ♡
+      </p>
+
+      <p class="intro">
+        Every little piece found its place.<br>
+        Here's to all our lovely memories.
+      </p>
+
+      <button id="replayButton">Play again ↻</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
