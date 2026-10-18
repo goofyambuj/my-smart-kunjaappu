@@ -10,7 +10,7 @@ const puzzleMessage = document.getElementById("puzzleMessage");
 const ROWS = 8;
 const COLS = 4;
 const TOTAL = ROWS * COLS;
-const IMAGE = "assets/kunji-photo.jpg";
+const IMAGE = "assets/photo8.jpeg";
 
 let tiles = [];
 let moves = 0;
