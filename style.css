@@ -1,0 +1,209 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --paper: #f6ead7;
+  --cream: #fffaf0;
+  --ink: #49392e;
+  --rose: #a85e68;
+  --muted: #8b7868;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px 14px;
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  background:
+    radial-gradient(ellipse at top left, #fff9e8, transparent 45%),
+    #e7d6bf;
+}
+
+.scrapbook {
+  width: min(100%, 760px);
+  margin: 0 auto;
+}
+
+.page {
+  position: relative;
+  padding: clamp(28px, 6vw, 58px);
+  text-align: center;
+  background: var(--cream);
+  border: 1px solid #dfcdb4;
+  box-shadow: 0 18px 55px #5c43251c;
+  animation: appear 0.5s ease;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed #d8c3a8;
+  pointer-events: none;
+}
+
+.page[hidden] {
+  display: none !important;
+}
+
+.eyebrow {
+  color: var(--rose);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  line-height: 1.8;
+}
+
+h1, h2 {
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(38px, 8vw, 65px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin: 18px 0;
+}
+
+h1 em {
+  color: var(--rose);
+}
+
+h2 {
+  font-size: clamp(29px, 6vw, 43px);
+  line-height: 1.15;
+}
+
+.photo-frame {
+  position: relative;
+  width: min(100%, 330px);
+  margin: 28px auto;
+  padding: 10px 10px 32px;
+  background: white;
+  box-shadow: 0 7px 22px #4b35231c;
+  transform: rotate(-2deg);
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.handwriting {
+  position: relative;
+  color: #725847;
+  font: 28px/1.2 'Caveat', cursive;
+}
+
+.intro {
+  position: relative;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+button {
+  position: relative;
+  margin: 8px 4px;
+  padding: 13px 18px;
+  border: 0;
+  background: var(--rose);
+  color: #fff9ef;
+  font: inherit;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #dfbdb1;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+  background: #844650;
+  transform: translateY(-2px);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 4px;
+}
+
+button.secondary {
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid #d5c0a4;
+  box-shadow: none;
+}
+
+.tiny-note {
+  position: relative;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+#puzzleBoard {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  width: min(100%, 390px);
+  margin: 25px auto;
+  padding: 5px;
+  background: #d4c0a2;
+  border: 1px solid #c8b291;
+}
+
+#moveCounter, #puzzleMessage {
+  position: relative;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.final-frame {
+  width: min(100%, 370px);
+  transform: rotate(1deg);
+}
+
+.final-message {
+  color: var(--rose);
+  font-size: clamp(30px, 6vw, 42px);
+  line-height: 1.2;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px 9px;
+  }
+
+  .page {
+    padding: 30px 19px;
+  }
+
+  .handwriting {
+    font-size: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
